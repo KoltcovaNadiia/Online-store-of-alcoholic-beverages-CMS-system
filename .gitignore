@@ -1,29 +1,30 @@
 # ОС і середовище
 .DS_Store
 Thumbs.db
-.cache/
-.cache
+
+# IDE
 .idea/
 .vscode/
-*.log
+*.iml
 
-# Composer
-/vendor/
-/composer.lock
+# Тимчасові файли
+*.log
+*.tmp
+*.lock
+*.bak
+*.swp
+
 
 # PhpDocumentor
 /cache/
-/output/
+output/
 
-# IDE / OSPanel / тимчасові
-*.bak
-*.tmp
-*.swp
-
-# ОСPanel специфічне
+# OSPanel
 /config/
 ospanel.log
 
-# PHPStorm / NetBeans тощо
+# Node.js
+/node_modules/
+
+# NetBeans
 nbproject/
-*.iml

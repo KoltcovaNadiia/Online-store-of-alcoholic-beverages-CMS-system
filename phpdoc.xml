@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor configVersion="3">
+    <title>Cool Sip CMS Documentation</title>
+
+    <settings>
+        <setting name="paths" value="controllers,models" />
+    </settings>
+
+    <paths>
+        <output>output</output>
+        <cache>cache</cache>
+    </paths>
+</phpdocumentor>
