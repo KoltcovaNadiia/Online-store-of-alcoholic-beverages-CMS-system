@@ -1,0 +1,29 @@
+# ОС і середовище
+.DS_Store
+Thumbs.db
+.cache/
+.cache
+.idea/
+.vscode/
+*.log
+
+# Composer
+/vendor/
+/composer.lock
+
+# PhpDocumentor
+/cache/
+/output/
+
+# IDE / OSPanel / тимчасові
+*.bak
+*.tmp
+*.swp
+
+# ОСPanel специфічне
+/config/
+ospanel.log
+
+# PHPStorm / NetBeans тощо
+nbproject/
+*.iml
