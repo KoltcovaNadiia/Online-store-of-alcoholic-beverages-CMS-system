@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Дозволити відкривати файли напряму, наприклад .html, .css, .js
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Якщо нічого не знайдено — направити в index.php
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
