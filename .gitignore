@@ -14,7 +14,6 @@ Thumbs.db
 *.bak
 *.swp
 
-
 # PhpDocumentor
 /cache/
 output/
@@ -25,6 +24,10 @@ ospanel.log
 
 # Node.js
 /node_modules/
+react-ui/node_modules/
 
 # NetBeans
 nbproject/
+
+# Storybook лог
+*storybook.log

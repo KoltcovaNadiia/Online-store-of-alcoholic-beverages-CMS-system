@@ -139,6 +139,72 @@ README, LICENSE, PRIVACY_POLICY.md – у корені проєкту
   php C:\OSPanel\progs\phpDocumentor.phar --ignore vendor
 
 
+---
+
+Ініціалізація Storybook
+У корені проєкту виконай у терміналі:
+
+
+npx storybook init
+Це створить потрібні конфіги: .storybook/ та приклади.
+
+Так! Перевірмо твоє **завдання по Storybook**:
+
+---
+
+✅ **2 компоненти описано**  
+Ти маєш:
+
+1. **Button**
+   - Файл: `Button.jsx`
+   - Story: `Button.stories.jsx`
+2. **ProductCard**
+   - Файл: `ProductCard.jsx`
+   - Story: `ProductCard.stories.jsx`
+
+---
+
+✅ **Властивості конфігуруються**  
+В `argTypes` для обох сторі-файлів прописані конфігурування:
+
+- `Button`: `label`, `variant`
+- `ProductCard`: `name`, `price`, `image`
+
+Це дозволяє змінювати їх значення через Storybook UI.
+
+---
+
+✅ **2-3 варіації (сторі) на компонент**
+
+- **Button**:
+   - `Primary`
+   - `Secondary`
+   - `Custom`
+
+- **ProductCard**:
+   - `Default`
+   - `Premium`
+   - `Discounted`
+
+---
+
+📦 **Storybook успішно запускається** і відображає компоненти → перевірено.
+
+---
+
+🎉 **Висновок**: Завдання **Storybook на 100% виконано правильно**.
+
+Хочеш допомогу з наступним пунктом (Swagger, ReadMe, Cookie popup)?
+
+
+npm run storybook
+
+
+npm init -y
+
+
+
+
 ### 👤 Автор
 Кольцова Надія
 Фронтенд & бекенд розробка
