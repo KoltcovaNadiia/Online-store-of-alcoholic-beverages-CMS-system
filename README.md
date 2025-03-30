@@ -6,12 +6,15 @@
 ---
 ## 🚀 Функціональність
 
+
 - Реєстрація та авторизація користувачів
-- Перегляд та управління товарами
+- Кошик і управління товарами
 - Категоризація продукції
-- Кошик для покупок
-- Адмін-панель (додавання/редагування продуктів)
-- API для інтеграції з фронтендом
+- Адмін-панель для CRUD операцій
+- API для взаємодії з frontend
+- Документація: Swagger / Storybook / PHPDoc
+- DPR: Cookie popup, Privacy Policy
+
 ---
 
 ## 🔧 Стек технологій
@@ -21,94 +24,122 @@
 - HTML/CSS/JS (чистий)
 - Apache + .htaccess
 - OOP MVC структура
-- JSON API
+- API: `json`, `fetch`
 - **Документація**: Swagger / Storybook / PHPDoc
 - **GDPR**: Cookie popup + Privacy policy
 
 ---
 
-## 📁 Структура проекту
 
 ## 📦 Встановлення
 
 1. Клонувати репозиторій:
    ```bash
-   git clone https://github.com/yourusername/low-alcohol-cms.git
-  
+   git clone https://github.com/KoltcovaNadiia/Online-store-of-alcoholic-beverages-CMS-system.git
+   ```
+
    
-1. **Запуск через OpenServer / XAMPP / WAMP**
+2. **Запуск через OpenServer / XAMPP / WAMP**
     - Скопіювати проєкт у директорію `domains/`
-    - Створити базу даних MySQL і імпортувати дамп у MySQL (дамп — див. `database/sms.sql`) Створити базу даних MySQL і імпортувати дамп (sms.sql)
+    - Створити базу даних MySQL і імпортувати дамп у MySQL (дамп — див. `database/sms.sql`) 
+    - Створити базу даних MySQL і імпортувати дамп (sms.sql)
     - Відкрийте в браузері:
-      ```
+    ```
       http://localhost/kursach/
-      ```
-2. **Налаштування бази даних**  
-   Вкажіть ваші параметри у `config/database.php`:
+   ```
+3. **Налаштування бази даних**  
+   Вкажіть ваші параметри у `config/database.php`: Відкрити: [database.php](database.php)
+
 
    ```php
      define('DATABASE_HOST', 'localhost');
      define('DATABASE_LOGIN', 'root');
      define('DATABASE_PASSWORD', '');
      define('DATABASE_BASENAME', 'cms');
-      ```
+   ```
+
+      
 ### 📦 Встановлення залежностей (фронтенд/документація)
-```
-npm install
+
+```bash
+  npm install
 ```
 Перейти до http://kursach/
 
 ---
 
-### 📑 API
-GET /api/products – отримати список продуктів
+## ⚖️ Ліцензія
+- Цей проєкт ліцензовано за умовами [MIT License].
+- Створено LICENSE MIT
+- Перевірено через license-checker
+- Результати перевірки ліцензій див. у [(licenses-report.md)](licenses-report.md)
 
-POST /api/cart/add – додати товар до кошика
 
-Докладніше – див. Swagger документацію у docs/swagger.yaml
 
----
-
-🍪 Cookie та GDPR
+## 🍪 Cookie та GDPR
 - Реалізовано cookie банер (бібліотека cookieconsent)
-
 - Всі куки згідно з GDPR класифіковані:
+  - Обов’язкові
+  - Функціональні
+  - Аналітика
 
-- Обов’язкові
+- [ Конфігурація банеру у (layout.php)](views/layout.php)
 
-- Функціональні
-
-- Аналітика
-
-- Конфігурація банеру — у public .
 
 ---
 
-🔐 Політика конфіденційності
-Документ знаходиться у файлі: privacy-policy.md
+## 🔐 Політика конфіденційності
+Документація доступна у 2 форматах:
+Markdown: privacy-policy.md
+HTML: privacy-policy.html
+- [ HTML:(PRIVACY_POLICY.md)](PRIVACY_POLICY.md)
+- [ HTML:(privacy-policy.html)](privacy-policy.html)
+
 
 ---
 
-📘 Документація
+## 📘 Документація
 Автоматично згенерована документація до коду:
 
-phpDocumentor HTML версія → /docs/index.html
+Згенеровано через phpDocumentor
 
-Або відкрийте Markdown-версію → docs/README.md
+Шлях: docs/index.html 
+[ Відкрити (index.html)](docs/index.html)
+
+- ⚙️ **Команда для генерації**:
+
+  
+```bash
+  php C:\OSPanel\progs\phpDocumentor.phar --ignore vendor
+```
 
 ---
 
-📖 Storybook
+## 📖 Storybook
 UI компоненти (якщо фронтенд винесено у окремий репо):
+Описано два компоненти:
 
-ProductCard
+1. Button
 
-BuyButton
+- Primary, Secondary, Custom
 
-Доступ:
+- Змінні: label, variant, size
 
----
-npm run storybook
+2. ProductCard
+
+- Default, Premium, Discounted
+
+- Змінні: name, price, image, onBuy
+
+Конфігуруються через argTypes
+
+Компоненти адаптивні та мають інтерактивну логіку
+
+Запуск:
+
+```bash
+  npm run storybook
+```
 
 
 ---
@@ -122,85 +153,45 @@ README, LICENSE, PRIVACY_POLICY.md – у корені проєкту
 
 ---
 
-### ⚖️ Ліцензія
-Проєкт ліцензовано за умовами MIT License.
-Результати перевірки ліцензій див. у license-report.txt
+
+## 📘  API (Swagger)
+
+Swagger доступний на:
+
+## ⚙️ Встановлення
+
+1. Переконайся, що у тебе встановлено **Node.js**.
+
+2. У корені проєкту встанови залежності:
+
+```bash
+  npm install express swagger-ui-express
+```
+
+```bash
+  node swagger-server.js
+```
+
+## 🔗 Демо
+
+Swagger UI буде доступний після запуску за адресою:
+
+```
+http://localhost:3001/api-docs
+```
+
+## 📑 Опис API
+
+| Метод | Шлях         | Опис                         |
+|-------|--------------|------------------------------|
+| GET   | `/products`  | Отримати всі продукти        |
+| POST  | `/products`  | Додати новий продукт         |
 
 ---
 
-
-## 📚 Документація коду
-
-Проєкт містить згенеровану документацію до PHP-коду за допомогою [phpDocumentor](https://www.phpdoc.org/)
-
-- 📁 **Шлях**: `/output/index.html`
-- ⚙️ **Команда для генерації**:
-  ```bash
-  php C:\OSPanel\progs\phpDocumentor.phar --ignore vendor
-
+3.Докладно — у [ (swagger-server.js)](swagger-server.js)
 
 ---
-
-Ініціалізація Storybook
-У корені проєкту виконай у терміналі:
-
-
-npx storybook init
-Це створить потрібні конфіги: .storybook/ та приклади.
-
-Так! Перевірмо твоє **завдання по Storybook**:
-
----
-
-✅ **2 компоненти описано**  
-Ти маєш:
-
-1. **Button**
-   - Файл: `Button.jsx`
-   - Story: `Button.stories.jsx`
-2. **ProductCard**
-   - Файл: `ProductCard.jsx`
-   - Story: `ProductCard.stories.jsx`
-
----
-
-✅ **Властивості конфігуруються**  
-В `argTypes` для обох сторі-файлів прописані конфігурування:
-
-- `Button`: `label`, `variant`
-- `ProductCard`: `name`, `price`, `image`
-
-Це дозволяє змінювати їх значення через Storybook UI.
-
----
-
-✅ **2-3 варіації (сторі) на компонент**
-
-- **Button**:
-   - `Primary`
-   - `Secondary`
-   - `Custom`
-
-- **ProductCard**:
-   - `Default`
-   - `Premium`
-   - `Discounted`
-
----
-
-📦 **Storybook успішно запускається** і відображає компоненти → перевірено.
-
----
-
-🎉 **Висновок**: Завдання **Storybook на 100% виконано правильно**.
-
-Хочеш допомогу з наступним пунктом (Swagger, ReadMe, Cookie popup)?
-
-
-npm run storybook
-
-
-npm init -y
 
 
 

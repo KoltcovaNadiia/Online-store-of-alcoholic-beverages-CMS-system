@@ -79,7 +79,7 @@ class Core
 
     public function Done()
     {
-        $pathToLayout = 'public/layout.php';
+        $pathToLayout = 'views/layout.php';
         $tpl = new Template($pathToLayout);
         $tpl->setParams($this->pageParams);
         $html = $tpl->getHTML();
